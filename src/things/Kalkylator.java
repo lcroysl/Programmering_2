@@ -22,7 +22,7 @@ public class Kalkylator extends Application implements EventHandler<ActionEvent>
 	public void start(Stage PrimaryStage) throws Exception {
 		
 		Buttons ko = new Buttons();
-		Scene kalkylator = new Scene(Buttons.knappar, 900, 900);
+		Scene kalkylator = new Scene(Buttons.knappar, 600, 600);
 		PrimaryStage.setScene(kalkylator);
 		PrimaryStage.show();
 	}
