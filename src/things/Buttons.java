@@ -6,32 +6,37 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
-public class Buttons {
+public class Buttons{
 
-	static GridPane knappar;
-	ArrayList<Button> buttons;
-	ArrayList<Button> opbuttons;
-	TextField inputs;
+	GridPane buttonGrid;
+	ArrayList<Button> numButtons;
+	ArrayList<Button> opButtons;
+	TextField inputField;
 
 	public Buttons() {
-		knappar = new GridPane();
-		knappar.setHgap(10);
-		knappar.setVgap(10);
-		knappar.gridLinesVisibleProperty();
-		buttons = new ArrayList<Button>();
-		opbuttons = new ArrayList<Button>();
-
-		char[] buttonkey = { '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '0'};
+		buttonGrid = new GridPane();
+		buttonGrid.setHgap(10);
+		buttonGrid.setVgap(10);
+		buttonGrid.gridLinesVisibleProperty();
+		numButtons = new ArrayList<Button>();
+		opButtons = new ArrayList<Button>();
+		inputField = new TextField();
+		
+		char[] buttonkey = { '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', '0'};
+		
+		buttonGrid.add(inputField, 0, 0);
+		inputField.setMaxSize(180, 30);
+		
 
 		for (char key : buttonkey) {
 			String buttonname = key + "";
 			Button tempButton = new Button(buttonname);
-			tempButton.setOnAction(event -> {inputs.textProperty().set(inputs.);
+			tempButton.setOnAction(event -> {inputField.textProperty().set(inputField.textProperty().get() + buttonname);
 			});
-			buttons.add(tempButton);
+			numButtons.add(tempButton);
 		}
 
-		int rowindex = 0;
+		int rowindex = 2;
 		int columnindex = 0;
 /*   
 		for (int i = 0; i < buttonkey.length + 1; i++) {
@@ -43,9 +48,9 @@ public class Buttons {
 			}
 		}*/
 		
-		for (Button knapp : buttons)
+		for (Button knapp : numButtons)
 		{
-			knappar.add(knapp, ++columnindex, rowindex);
+			buttonGrid.add(knapp, ++columnindex, rowindex);
 			knapp.setMinSize(30, 30);
 			knapp.setMaxSize(30, 30);
 			if (columnindex % 3 == 0)
@@ -55,25 +60,31 @@ public class Buttons {
 			}
 		}
 		
-		char[] operatorB = {'÷','*','+','-'};
+		char[] operators = {'÷','*','+','-'};
 		
-		for(char op : operatorB) {
+		for(char op : operators) {
 			String opname = "" + op;
 			Button temp2 = new Button(opname);
+			
+			if(opname.equals("÷")) {
 			temp2.setOnAction(event ->{});
-			opbuttons.add(temp2);
+			}
+			
+			opButtons.add(temp2);
 		}
 		
-		int rowindex2 = 0;
+		int rowindex2 = 2;
 		
-		for(Button ops : opbuttons) {
-			knappar.add(ops, 4, rowindex2);
+		for(Button ops : opButtons) {
+			buttonGrid.add(ops, 4, rowindex2);
 			ops.setMinSize(30, 30);
 			ops.setMaxSize(30, 30);
 			rowindex2 ++;
 			
 		}
-
+		Spcbutton nw = new Spcbutton();
+		buttonGrid.add(nw.equals, 3, 5);
+		buttonGrid.add(nw.comma, 1, 5);
 	}
 
 }
