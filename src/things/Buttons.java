@@ -24,9 +24,8 @@ public class Buttons{
 		
 		char[] buttonkey = { '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', '0'};
 		
-		buttonGrid.add(inputField, 0, 0);
-		inputField.setMaxSize(180, 30);
 		
+		inputField.setMaxSize(170, 30);
 
 		for (char key : buttonkey) {
 			String buttonname = key + "";
@@ -65,11 +64,7 @@ public class Buttons{
 		for(char op : operators) {
 			String opname = "" + op;
 			Button temp2 = new Button(opname);
-			
-			if(opname.equals("÷")) {
-			temp2.setOnAction(event ->{});
-			}
-			
+			temp2.setOnAction(event ->{inputField.textProperty().set(inputField.textProperty().get() + opname);});
 			opButtons.add(temp2);
 		}
 		
@@ -80,11 +75,12 @@ public class Buttons{
 			ops.setMinSize(30, 30);
 			ops.setMaxSize(30, 30);
 			rowindex2 ++;
-			
 		}
+		
 		Spcbutton nw = new Spcbutton();
 		buttonGrid.add(nw.equals, 3, 5);
 		buttonGrid.add(nw.comma, 1, 5);
+		
 	}
 
 }

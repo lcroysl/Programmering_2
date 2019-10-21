@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Kalkylator extends Application implements EventHandler<ActionEvent> {
@@ -23,7 +24,9 @@ public class Kalkylator extends Application implements EventHandler<ActionEvent>
 	public void start(Stage PrimaryStage) throws Exception {
 		
 		Buttons ko = new Buttons();
-		Scene kalkylator = new Scene(ko.buttonGrid, 600, 600);
+		VBox minicontain = new VBox();
+		minicontain.getChildren().addAll(ko.inputField, ko.buttonGrid);
+		Scene kalkylator = new Scene(minicontain, 600, 600);
 		PrimaryStage.setScene(kalkylator);
 		PrimaryStage.show();
 	}
