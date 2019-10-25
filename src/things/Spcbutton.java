@@ -14,8 +14,6 @@ public class Spcbutton{
 		
 		equals = new Button("=");
 		equals.setMinSize(30, 30);
-		comma = new Button(",");
-		comma.setMinSize(30, 30);
 		
 	}
 

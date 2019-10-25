@@ -22,10 +22,11 @@ public class Buttons{
 		inputField = new TextField();
 		opButtons = new ArrayList<Button>();
 		
-		char[] buttonkey = { '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', '0'};
+		char[] buttonkey = { '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '0'};
 		
 		
 		inputField.setMaxSize(170, 30);
+		inputField.setEditable(false);
 
 		for (char key : buttonkey) {
 			String buttonname = key + "";
@@ -59,11 +60,13 @@ public class Buttons{
 			}
 		}
 		
-
+		Counter cr = new Counter();
 		
 		Spcbutton nw = new Spcbutton();
 		buttonGrid.add(nw.equals, 3, 5);
-		buttonGrid.add(nw.comma, 1, 5);
+		nw.equals.setOnAction(event ->{
+			inputField.textProperty().set(cr.counter());
+		});
 		
 		opsb();
 		
