@@ -10,6 +10,8 @@ public class Spcbutton{
 	Button comma;
 
 	public Spcbutton() {
+		
+		
 		equals = new Button("=");
 		equals.setMinSize(30, 30);
 		comma = new Button(",");

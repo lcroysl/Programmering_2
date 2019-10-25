@@ -10,8 +10,8 @@ public class Buttons{
 
 	GridPane buttonGrid;
 	ArrayList<Button> numButtons;
-	ArrayList<Button> opButtons;
 	TextField inputField;
+	ArrayList<Button> opButtons;
 
 	public Buttons() {
 		buttonGrid = new GridPane();
@@ -19,8 +19,8 @@ public class Buttons{
 		buttonGrid.setVgap(10);
 		buttonGrid.gridLinesVisibleProperty();
 		numButtons = new ArrayList<Button>();
-		opButtons = new ArrayList<Button>();
 		inputField = new TextField();
+		opButtons = new ArrayList<Button>();
 		
 		char[] buttonkey = { '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', '0'};
 		
@@ -59,6 +59,18 @@ public class Buttons{
 			}
 		}
 		
+
+		
+		Spcbutton nw = new Spcbutton();
+		buttonGrid.add(nw.equals, 3, 5);
+		buttonGrid.add(nw.comma, 1, 5);
+		
+		opsb();
+		
+	}
+	
+	public void opsb() {
+		
 		char[] operators = {'÷','*','+','-'};
 		
 		for(char op : operators) {
@@ -77,10 +89,7 @@ public class Buttons{
 			rowindex2 ++;
 		}
 		
-		Spcbutton nw = new Spcbutton();
-		buttonGrid.add(nw.equals, 3, 5);
-		buttonGrid.add(nw.comma, 1, 5);
-		
+
 	}
 
 }
