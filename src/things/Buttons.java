@@ -21,8 +21,9 @@ public class Buttons{
 		numButtons = new ArrayList<Button>();
 		inputField = new TextField();
 		opButtons = new ArrayList<Button>();
+
 		
-		char[] buttonkey = { '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '0'};
+		char[] buttonkey = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0'};
 		
 		
 		inputField.setMaxSize(170, 30);
@@ -60,12 +61,14 @@ public class Buttons{
 			}
 		}
 		
-		Counter cr = new Counter();
-		
 		Spcbutton nw = new Spcbutton();
 		buttonGrid.add(nw.equals, 3, 5);
+		buttonGrid.add(nw.clear, 1, 1);
 		nw.equals.setOnAction(event ->{
-			inputField.textProperty().set(cr.counter());
+			inputField.textProperty().set(Counter.counter(inputField.textProperty().get()));
+		});
+		nw.clear.setOnAction(event ->{
+			inputField.textProperty().set("");
 		});
 		
 		opsb();
