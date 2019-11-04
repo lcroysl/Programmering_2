@@ -8,6 +8,7 @@ public class Spcbutton{
 	
 	Button equals;
 	Button clear;
+	Button root;
 
 	public Spcbutton() {
 		
@@ -16,7 +17,8 @@ public class Spcbutton{
 		equals.setMinSize(30, 30);
 		clear = new Button("C");
 		clear.setMinSize(30, 30);
-		
+		root = new Button("R");
+		root.setMinSize(30, 30);
 	}
 
 }

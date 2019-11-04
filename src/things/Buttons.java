@@ -64,12 +64,14 @@ public class Buttons{
 		Spcbutton nw = new Spcbutton();
 		buttonGrid.add(nw.equals, 3, 5);
 		buttonGrid.add(nw.clear, 1, 1);
+		buttonGrid.add(nw.root, 2, 1);
 		nw.equals.setOnAction(event ->{
 			inputField.textProperty().set(Counter.counter(inputField.textProperty().get()));
 		});
 		nw.clear.setOnAction(event ->{
 			inputField.textProperty().set("");
 		});
+		nw.root.setOnAction(event -> {inputField.textProperty().set(inputField.textProperty().get() + "R");});
 		
 		opsb();
 		
@@ -77,7 +79,7 @@ public class Buttons{
 	
 	public void opsb() {
 		
-		char[] operators = {'÷','*','+','-'};
+		char[] operators = {'÷','*','+','-','%'};
 		
 		for(char op : operators) {
 			String opname = "" + op;
@@ -86,7 +88,7 @@ public class Buttons{
 			opButtons.add(temp2);
 		}
 		
-		int rowindex2 = 2;
+		int rowindex2 = 1;
 		
 		for(Button ops : opButtons) {
 			buttonGrid.add(ops, 4, rowindex2);
